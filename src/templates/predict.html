@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+<a href="/">Return to main page</a>
+{% for para in text %}
+    <p>{{para}}</p>
+{% endfor %}
+<div class="container">
+    <figure>
+        <img src="{{url_for('static', filename='image.png')}}">
+        <figcaption>Original image</figcaption>
+    </figure>
+    <figure>
+        <img src="{{url_for('static', filename='segmentate.png')}}">
+        <figcaption>Segmentation mask</figcaption>
+    </figure>
+    <figure>
+        <img src="{{url_for('static', filename='skeleton.png')}}">
+        <figcaption>Image skeleton</figcaption>
+    </figure>
+</div>
+{% endblock %}

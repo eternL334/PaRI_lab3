@@ -1,0 +1,6 @@
+numpy
+flask
+werkzeug
+waitress
+opencv-python-headless
+scikit-image
