@@ -74,16 +74,18 @@ def get_graph(vertices, radius):
     return sizes
 
 def squeeze_sizes(sizes):
+    if len(sizes) == 0:
+        return [0]
     squeezed = [0] * max(sizes)
     for size in sizes:
         squeezed[size - 1] += 1
     return squeezed
 
-def mae(x, y):
+def mse(x, y):
     ans = 0
     for i in range(max(len(x), len(y))):
         if i < len(x) and i < len(y):
-            ans += abs(x[i] - y[i])
+            ans += (x[i] - y[i]) ** 2
         elif i < len(x):
             ans += x[i]
         else:
@@ -101,7 +103,7 @@ def get_class(sizes):
     idx = None
     min_score = None
     for i, class_ in enumerate(classes):
-        score = mae(class_, sizes)
+        score = mse(class_, sizes)
         if min_score is None or score < min_score:
             min_score = score
             idx = i

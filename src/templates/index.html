@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
-<h1>Triangles</h1>
+<h1>Graph</h1>
 <form method="POST" enctype=multipart/form-data>
     <p>
         <label for="predict">Select image: </label>
@@ -23,7 +23,7 @@
     </p>
     <p>
         <label for="size">Min size for component: </label>
-        <input type="number" value="30" min="0" id="size" name="size">
+        <input type="number" value="20" min="0" id="size" name="size">
     </p>
     <p>
         <label for="radius">Radius for searching vertices: </label>
