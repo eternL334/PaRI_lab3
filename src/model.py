@@ -40,8 +40,6 @@ def segmentate(img, low, high):
     kernel = np.ones((7, 7), dtype=np.uint8)
     mask = cv.morphologyEx(mask, cv.MORPH_OPEN, kernel)
 
-    # kernel = np.ones((13, 13), dtype=np.uint8)
-    # mask = cv.morphologyEx(mask, cv.MORPH_CLOSE, kernel)
     return mask
 
 def remove_components(img, min_size):
